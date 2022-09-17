@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     TextView _textView;
     Button _btnRestart;
     String turno="X";
+    int count=1;
 
     String [][] arreglo = new String[3][3]; //Arreglo para calcular ganador
 
@@ -63,6 +64,11 @@ public class MainActivity extends AppCompatActivity {
             turn();
             ganadorO(arreglo);
         }
+        count++;
+        if (count==10 && (!ganadorO(arreglo) && !ganadorX(arreglo))) {
+            _textView.setText("Empate");
+            Disable();
+        }
     }
 
     public void arreglo01(View view) {
@@ -78,6 +84,11 @@ public class MainActivity extends AppCompatActivity {
             arreglo[0][1]=turno;
             turn();
             ganadorO(arreglo);
+        }
+        count++;
+        if (count==10 && (!ganadorO(arreglo) && !ganadorX(arreglo))) {
+            _textView.setText("Empate");
+            Disable();
         }
     }
 
@@ -95,6 +106,11 @@ public class MainActivity extends AppCompatActivity {
             arreglo[0][2]=turno;
             turn();
             ganadorO(arreglo);
+        }
+        count++;
+        if (count==10 && (!ganadorO(arreglo) && !ganadorX(arreglo))) {
+            _textView.setText("Empate");
+            Disable();
         }
     }
 
@@ -114,6 +130,11 @@ public class MainActivity extends AppCompatActivity {
             turn();
             ganadorO(arreglo);
         }
+        count++;
+        if (count==10 && (!ganadorO(arreglo) && !ganadorX(arreglo))) {
+            _textView.setText("Empate");
+            Disable();
+        }
     }
 
     public void arreglo11(View view) {
@@ -129,6 +150,11 @@ public class MainActivity extends AppCompatActivity {
             arreglo[1][1]=turno;
             turn();
             ganadorO(arreglo);
+        }
+        count++;
+        if (count==10 && (!ganadorO(arreglo) && !ganadorX(arreglo))) {
+            _textView.setText("Empate");
+            Disable();
         }
     }
 
@@ -146,6 +172,11 @@ public class MainActivity extends AppCompatActivity {
             turn();
             ganadorO(arreglo);
         }
+        count++;
+        if (count==10 && (!ganadorO(arreglo) && !ganadorX(arreglo))) {
+            _textView.setText("Empate");
+            Disable();
+        }
     }
 
     public void arreglo20(View view) {
@@ -161,6 +192,11 @@ public class MainActivity extends AppCompatActivity {
             arreglo[2][0]=turno;
             turn();
             ganadorO(arreglo);
+        }
+        count++;
+        if (count==10 && (!ganadorO(arreglo) && !ganadorX(arreglo))) {
+            _textView.setText("Empate");
+            Disable();
         }
     }
 
@@ -179,6 +215,11 @@ public class MainActivity extends AppCompatActivity {
             turn();
             ganadorO(arreglo);
         }
+        count++;
+        if (count==10 && (!ganadorO(arreglo) && !ganadorX(arreglo))) {
+            _textView.setText("Empate");
+            Disable();
+        }
     }
 
     public void arreglo22(View view) {
@@ -194,6 +235,11 @@ public class MainActivity extends AppCompatActivity {
             arreglo[2][2]=turno;
             turn();
             ganadorO(arreglo);
+        }
+        count++;
+        if (count==10 && (!ganadorO(arreglo) && !ganadorX(arreglo))) {
+            _textView.setText("Empate");
+            Disable();
         }
     }
 
@@ -435,5 +481,9 @@ public class MainActivity extends AppCompatActivity {
     public void Restart(View view) {
         _btnRestart.setVisibility(View.INVISIBLE);
         Enable();
+        turno="X";
+        _textView.setText("");
+        count=1;
+        _gatoX.setBackgroundColor(Color.parseColor("#42ab49"));
     }
 }
