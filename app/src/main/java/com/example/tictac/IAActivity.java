@@ -1,8 +1,5 @@
 package com.example.tictac;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -10,7 +7,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class IAActivity extends AppCompatActivity {
     ImageView _imageView1;
     ImageView _imageView2;
     ImageView _imageView3;
@@ -26,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     Button _btnRestart;
     String turno="X";
     int count=1;
+    int casillaIA;
 
     String [][] arreglo = new String[3][3]; //Arreglo para calcular ganador
 
@@ -58,12 +58,10 @@ public class MainActivity extends AppCompatActivity {
             arreglo[0][0]=turno;
             turn();
             ganadorX(arreglo);
-        }else{
-            _imageView1.setImageResource(R.drawable.gato_o);
-            _imageView1.setEnabled(false);
-            arreglo[0][0]=turno;
-            turn();
-            ganadorO(arreglo);
+            if(!ganadorX(arreglo)){
+                arreglo = turnIA(arreglo);
+                ganadorO(arreglo);
+            }
         }
         count++;
         if (count==10 && (!ganadorO(arreglo) && !ganadorX(arreglo))) {
@@ -79,12 +77,10 @@ public class MainActivity extends AppCompatActivity {
             arreglo[0][1]=turno;
             turn();
             ganadorX(arreglo);
-        }else{
-            _imageView2.setImageResource(R.drawable.gato_o);
-            _imageView2.setEnabled(false);
-            arreglo[0][1]=turno;
-            turn();
-            ganadorO(arreglo);
+            if(!ganadorX(arreglo)){
+                arreglo = turnIA(arreglo);
+                ganadorO(arreglo);
+            }
         }
         count++;
         if (count==10 && (!ganadorO(arreglo) && !ganadorX(arreglo))) {
@@ -100,13 +96,10 @@ public class MainActivity extends AppCompatActivity {
             arreglo[0][2]=turno;
             turn();
             ganadorX(arreglo);
-        }else{
-            _imageView3.setImageResource(R.drawable.gato_o);
-            //HOla
-            _imageView3.setEnabled(false);
-            arreglo[0][2]=turno;
-            turn();
-            ganadorO(arreglo);
+            if(!ganadorX(arreglo)){
+                arreglo = turnIA(arreglo);
+                ganadorO(arreglo);
+            }
         }
         count++;
         if (count==10 && (!ganadorO(arreglo) && !ganadorX(arreglo))) {
@@ -123,13 +116,10 @@ public class MainActivity extends AppCompatActivity {
             arreglo[1][0]=turno;
             turn();
             ganadorX(arreglo);
-        }else{
-            _imageView4.setImageResource(R.drawable.gato_o);
-            //HOla
-            _imageView4.setEnabled(false);
-            arreglo[1][0]=turno;
-            turn();
-            ganadorO(arreglo);
+            if(!ganadorX(arreglo)){
+                arreglo = turnIA(arreglo);
+                ganadorO(arreglo);
+            }
         }
         count++;
         if (count==10 && (!ganadorO(arreglo) && !ganadorX(arreglo))) {
@@ -145,12 +135,10 @@ public class MainActivity extends AppCompatActivity {
             arreglo[1][1]=turno;
             turn();
             ganadorX(arreglo);
-        }else{
-            _imageView5.setImageResource(R.drawable.gato_o);
-            _imageView5.setEnabled(false);
-            arreglo[1][1]=turno;
-            turn();
-            ganadorO(arreglo);
+            if(!ganadorX(arreglo)){
+                arreglo = turnIA(arreglo);
+                ganadorO(arreglo);
+            }
         }
         count++;
         if (count==10 && (!ganadorO(arreglo) && !ganadorX(arreglo))) {
@@ -166,12 +154,10 @@ public class MainActivity extends AppCompatActivity {
             arreglo[1][2]=turno;
             turn();
             ganadorX(arreglo);
-        }else{
-            _imageView6.setImageResource(R.drawable.gato_o);
-            _imageView6.setEnabled(false);
-            arreglo[1][2]=turno;
-            turn();
-            ganadorO(arreglo);
+            if(!ganadorX(arreglo)){
+                arreglo = turnIA(arreglo);
+                ganadorO(arreglo);
+            }
         }
         count++;
         if (count==10 && (!ganadorO(arreglo) && !ganadorX(arreglo))) {
@@ -187,12 +173,10 @@ public class MainActivity extends AppCompatActivity {
             arreglo[2][0]=turno;
             turn();
             ganadorX(arreglo);
-        }else{
-            _imageView7.setImageResource(R.drawable.gato_o);
-            _imageView7.setEnabled(false);
-            arreglo[2][0]=turno;
-            turn();
-            ganadorO(arreglo);
+            if(!ganadorX(arreglo)){
+                arreglo = turnIA(arreglo);
+                ganadorO(arreglo);
+            }
         }
         count++;
         if (count==10 && (!ganadorO(arreglo) && !ganadorX(arreglo))) {
@@ -208,13 +192,10 @@ public class MainActivity extends AppCompatActivity {
             arreglo[2][1]=turno;
             turn();
             ganadorX(arreglo);
-        }else{
-            _imageView8.setImageResource(R.drawable.gato_o);
-            //HOla
-            _imageView8.setEnabled(false);
-            arreglo[2][1]=turno;
-            turn();
-            ganadorO(arreglo);
+            if(!ganadorX(arreglo)){
+                arreglo = turnIA(arreglo);
+                ganadorO(arreglo);
+            }
         }
         count++;
         if (count==10 && (!ganadorO(arreglo) && !ganadorX(arreglo))) {
@@ -230,12 +211,10 @@ public class MainActivity extends AppCompatActivity {
             arreglo[2][2]=turno;
             turn();
             ganadorX(arreglo);
-        }else{
-            _imageView9.setImageResource(R.drawable.gato_o);
-            _imageView9.setEnabled(false);
-            arreglo[2][2]=turno;
-            turn();
-            ganadorO(arreglo);
+            if(!ganadorX(arreglo)){
+                arreglo = turnIA(arreglo);
+                ganadorO(arreglo);
+            }
         }
         count++;
         if (count==10 && (!ganadorO(arreglo) && !ganadorX(arreglo))) {
@@ -256,6 +235,8 @@ public class MainActivity extends AppCompatActivity {
             _gatoX.setBackgroundColor(Color.parseColor("#42ab49"));
         }
     }
+
+
 
     public boolean ganadorX(String [][] arreglo){
         if(arreglo[0][0]=="X" && arreglo[0][1]=="X" && arreglo[0][2]=="X"){
@@ -359,7 +340,7 @@ public class MainActivity extends AppCompatActivity {
             _gatoO.setBackgroundColor(Color.parseColor("#42ab49"));
             _gatoX.setBackgroundColor(Color.parseColor("#c63637"));
             _textView.setText("El Ganador es 'O'");
-        Disable();
+            Disable();
             return true;
         }
         if(arreglo[2][0]=="O" && arreglo[2][1]=="O" && arreglo[2][2]=="O"){
@@ -488,8 +469,123 @@ public class MainActivity extends AppCompatActivity {
         _gatoX.setBackgroundColor(Color.parseColor("#42ab49"));
     }
 
-    public void Atras(View view){
-        Intent Menu = new Intent(this,MenuActivity.class);
-        startActivity(Menu);
+    public String[][] turnIA(String [][] arregloTablero){
+        if (count != 10){
+            turno="O";
+            boolean casillaIAValida = false;
+            while (casillaIAValida == false){
+                casillaIA = (int) (Math.random() * 8);
+                switch (casillaIA){
+                    case 0:
+                        if(arregloTablero[0][0]== null)
+                        {
+                            arregloTablero[0][0]= "O";
+                            _imageView1.setImageResource(R.drawable.gato_o);
+                            _imageView1.setEnabled(false);
+                            casillaIAValida = true;
+                        }
+                        break;
+                    case 1:
+                        if(arregloTablero[0][1]== null)
+                        {
+                            arregloTablero[0][1]= "O";
+                            _imageView2.setImageResource(R.drawable.gato_o);
+                            _imageView2.setEnabled(false);
+                            casillaIAValida = true;
+                        }
+                        break;
+                    case 2:
+                        if(arregloTablero[0][2]== null)
+                        {
+                            arregloTablero[0][2]= "O";
+                            _imageView3.setImageResource(R.drawable.gato_o);
+                            _imageView3.setEnabled(false);
+                            casillaIAValida = true;
+                        }
+                        break;
+                    case 3:
+                        if(arregloTablero[1][0]== null)
+                        {
+                            arregloTablero[1][0]= "O";
+                            _imageView4.setImageResource(R.drawable.gato_o);
+                            _imageView4.setEnabled(false);
+                            casillaIAValida = true;
+                        }
+                        break;
+                    case 4:
+                        if(arregloTablero[1][1]== null)
+                        {
+                            arregloTablero[1][1]= "O";
+                            _imageView5.setImageResource(R.drawable.gato_o);
+                            _imageView5.setEnabled(false);
+                            casillaIAValida = true;
+                        }
+                        break;
+                    case 5:
+                        if(arregloTablero[1][2]== null)
+                        {
+                            arregloTablero[1][2]= "O";
+                            _imageView6.setImageResource(R.drawable.gato_o);
+                            _imageView6.setEnabled(false);
+                            casillaIAValida = true;
+                        }
+                        break;
+                    case 6:
+                        if(arregloTablero[2][0]== null)
+                        {
+                            arregloTablero[2][0]= "O";
+                            _imageView7.setImageResource(R.drawable.gato_o);
+                            _imageView7.setEnabled(false);
+                            casillaIAValida = true;
+                        }
+                        break;
+                    case 7:
+                        if(arregloTablero[2][1]== null)
+                        {
+                            arregloTablero[2][1]= "O";
+                            _imageView8.setImageResource(R.drawable.gato_o);
+                            _imageView8.setEnabled(false);
+                            casillaIAValida = true;
+                        }
+                        break;
+                    case 8:
+                        if(arregloTablero[2][2]== null)
+                        {
+                            arregloTablero[2][2]= "O";
+                            _imageView9.setImageResource(R.drawable.gato_o);
+                            _imageView9.setEnabled(false);
+                            casillaIAValida = true;
+                        }
+                        break;
+                }
+                /*if(casillaIA >= 0 && casillaIA <=2){
+                    if(arregloTablero[casillaIA][0]== "")
+                    {
+                        arregloTablero[casillaIA][0]= "O";
+                        casillaIAValida = true;
+                    }
+                }else
+                {
+                    if(casillaIA >= 3 && casillaIA <=5){
+                        if(arregloTablero[casillaIA][1]== "")
+                        {
+                            arregloTablero[casillaIA][1]= "O";
+                            casillaIAValida = true;
+                        }
+
+                    }else{
+                        if(casillaIA >= 6 && casillaIA <=8) {
+                            if (arregloTablero[casillaIA][2] == "") {
+                                arregloTablero[casillaIA][2] = "O";
+                                casillaIAValida = true;
+                            }
+                        }
+                    }
+                }*/
+            }
+
+        }
+        turno="X";
+        return arregloTablero;
     }
 }

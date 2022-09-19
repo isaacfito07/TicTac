@@ -8,6 +8,7 @@
     android:gravity="center">
 
     <TableLayout
+        android:id="@+id/tableLayout"
         android:layout_width="300dp"
         android:layout_height="500dp"
         android:layout_marginStart="55dp"
@@ -67,22 +68,22 @@
                 android:id="@+id/imageView4"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                app:srcCompat="@drawable/cuadro"
-                android:onClick="arreglo10"/>
+                android:onClick="arreglo10"
+                app:srcCompat="@drawable/cuadro" />
 
             <ImageView
                 android:id="@+id/imageView5"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                app:srcCompat="@drawable/cuadro"
-                android:onClick="arreglo11"/>
+                android:onClick="arreglo11"
+                app:srcCompat="@drawable/cuadro" />
 
             <ImageView
                 android:id="@+id/imageView6"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                app:srcCompat="@drawable/cuadro"
-                android:onClick="arreglo12"/>
+                android:onClick="arreglo12"
+                app:srcCompat="@drawable/cuadro" />
         </TableRow>
 
         <TableRow
@@ -93,22 +94,22 @@
                 android:id="@+id/imageView7"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                app:srcCompat="@drawable/cuadro"
-                android:onClick="arreglo20"/>
+                android:onClick="arreglo20"
+                app:srcCompat="@drawable/cuadro" />
 
             <ImageView
                 android:id="@+id/imageView8"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                app:srcCompat="@drawable/cuadro"
-                android:onClick="arreglo21"/>
+                android:onClick="arreglo21"
+                app:srcCompat="@drawable/cuadro" />
 
             <ImageView
                 android:id="@+id/imageView9"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                app:srcCompat="@drawable/cuadro"
-                android:onClick="arreglo22"/>
+                android:onClick="arreglo22"
+                app:srcCompat="@drawable/cuadro" />
 
         </TableRow>
 
@@ -121,31 +122,52 @@
                 android:id="@+id/gato_x"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                app:srcCompat="@drawable/gato_x"
-                android:background="#42ab49"/>
+                android:background="#42ab49"
+                app:srcCompat="@drawable/gato_x" />
         </TableRow>
 
     </TableLayout>
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="383dp"
-        android:layout_height="47dp"
-        android:text="Esto es texto"
+        android:layout_width="325dp"
+        android:layout_height="58dp"
+        android:fontFamily="casual"
         android:gravity="center"
-        tools:layout_editor_absoluteX="3dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:text="Esto es texto"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.741" />
 
     <Button
         android:id="@+id/btnRestart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:text="Restart"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="155dp"
+        android:layout_marginBottom="16dp"
         android:gravity="center"
+        android:onClick="Restart"
+        android:text="Restart"
         android:visibility="invisible"
-        android:onClick="Restart"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout"
+        app:layout_constraintVertical_bias="0.784" />
+
+    <ImageView
+        android:id="@+id/BTNAtras"
+        android:layout_width="80dp"
+        android:layout_height="62dp"
+        android:onClick="Atras"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023"
+        app:srcCompat="@drawable/atras" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
